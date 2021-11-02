@@ -1,0 +1,21 @@
+@startuml
+
+!startsub cardsub
+skinparam ParticipantPadding 20
+skinparam BoxPadding 10
+autonumber
+
+actor Customer
+
+box "KalahGame" #Bisque
+    participant "KalahGame client" as KalahGameClient
+end box
+
+== Player initiate new Game ==
+Customer -> KalahGameClient: POST create new game
+KalahGameClient -> Customer: Success with newly changed board status
+
+
+!endsub
+
+@enduml

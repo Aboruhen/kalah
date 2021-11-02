@@ -1,0 +1,20 @@
+@startuml
+
+!startsub cardsub
+skinparam ParticipantPadding 20
+skinparam BoxPadding 10
+autonumber
+
+actor Customer
+
+box "KalahGame" #Bisque
+    participant "KalahGame client" as KalahGameClient
+end box
+
+== Player make a move ==
+Customer -> KalahGameClient: PUT player make a move /games/{gameId}/pits/{pitId}
+KalahGameClient -> Customer: Created with new gameId and url
+
+!endsub
+
+@enduml

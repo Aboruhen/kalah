@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "c062be11-1819-4360-baa9-615f1b02a2d2",
+		"name": "Kalah",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create game",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"GAME_ID\", jsonData.id);",
+							"tests[\"Request is successful\"] = (responseCode.code === 201);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/kalah/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"kalah",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make move",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/kalah/games/{{GAME_ID}}/pits/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"kalah",
+						"games",
+						"{{GAME_ID}}",
+						"pits",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
