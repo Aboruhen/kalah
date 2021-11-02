@@ -3,7 +3,6 @@ This a simple POC a game in rest format.
 This is a game of 6-stone Kalah.
 Wikipedia: https://en.wikipedia.org/wiki/Kalah.
 
-
 ### API documentation
 Normally a good practise would be to first crate the api documentation.
 For example using an [OpenAPI](https://www.openapis.org/)
@@ -39,7 +38,11 @@ My preference would be a BOAT plugin as it's really simple a cover mostly all ne
 * [Java 17](http://www.oracle.com/technetwork/java/javase/downloads/index.html)  - Programming language
 * [Maven 3.5.0](https://maven.apache.org/download.cgi) - Build tool
 
-
+### Pull from git
+```
+$ git clone https://github.com/Aboruhen/kalah.git
+$ cd kalah
+```
 
 ### Build & run
 
