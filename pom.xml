@@ -12,10 +12,15 @@
 	<artifactId>kalah</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kalah</name>
-	<description>Simple API game</description>
+
+	<description>Kalah API Game</description>
+
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>17</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -38,11 +43,11 @@
 			<artifactId>spring-session-core</artifactId>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>org.slf4j</groupId>-->
-<!--			<artifactId>slf4j-api</artifactId>-->
-<!--			<version>2.0.0-alpha5</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>5.1.3</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>

@@ -1,7 +1,5 @@
 package com.start.game.kalah.engine;
 
-import java.util.List;
-import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -35,9 +33,8 @@ public class KalahEngine {
      * @return new changed board {@link KalahBoard}
      */
     public KalahBoard move(KalahBoard kalahBoard, Player player, int pitId) {
-        int pitBoardIndex = player.getPitBoardIndex(pitId);
-        log.debug("Find exact array player pit board index {}", pitBoardIndex);
-        return stoneSow(kalahBoard, pitBoardIndex, player);
+        log.debug("Find exact array player pit board index {}", pitId);
+        return stoneSow(kalahBoard, pitId, player);
     }
 
     private KalahBoard stoneSow(KalahBoard kalahBoard, int pitBoardIndex, Player player) {
@@ -108,7 +105,7 @@ public class KalahEngine {
         if (player.getPitIndexes().contains(nexPitIndex)) {
             return nexPitIndex;
         }
-        if (nexPitIndex == getOpponent(player).getHouseIndex()) {
+        if (nexPitIndex == getOpponent(player).getHouseIndex() || nexPitIndex > Player.TWO.getHouseIndex()) {
             return 0;
         }
         return nexPitIndex;

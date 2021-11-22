@@ -9,5 +9,8 @@ public interface KalahGameService {
     GameInit initGame();
 
     GameStatus move(Player player, String gameId, int pitId);
+    GameStatus move(String gameId, int pitId);
+
+    GameStatus findGame(String id);
 
 }

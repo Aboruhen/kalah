@@ -4,6 +4,7 @@ import com.start.game.kalah.api.model.GameInit;
 import com.start.game.kalah.api.model.GameStatus;
 import com.start.game.kalah.engine.Player;
 import com.start.game.kalah.service.KalahGameService;
+import javax.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -41,6 +42,10 @@ public class KalahApi {
     public ResponseEntity<GameStatus> play(@PathVariable String gameId, @PathVariable Integer pitId) {
         log.debug("Next Move from pit {}, in game: {}", pitId, gameId);
 
+        return ResponseEntity.ok().body(gameMove(gameId, pitId));
+    }
+
+    private GameStatus gameMove(String gameId, Integer pitId) {
         Player player = Player.NONE;
         if (Player.ONE.getPitIndexes().contains(pitId)) {
             player = Player.ONE;
@@ -52,7 +57,7 @@ public class KalahApi {
             throw new IllegalArgumentException("Incorrect pit index");
         }
         log.debug("Move is done by player: {} to pit {}, in game: {}", player, pitId, gameId);
-        return ResponseEntity.ok().body(kalahGameService.move(player, gameId, pitId));
+        return kalahGameService.move(player, gameId, pitId);
     }
 
 }
