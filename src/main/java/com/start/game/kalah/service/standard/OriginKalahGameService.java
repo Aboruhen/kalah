@@ -101,6 +101,7 @@ public class OriginKalahGameService implements KalahGameService {
     public GameStatus findGame(String gameId) {
         KalahBoard kalahBoard = kalahRepository.findById(gameId);
         URI gameUri = getGameUri(gameId);
+        log.debug("Telepresence");
         return new GameStatus(gameId, gameUri, kalahBoard.getPits());
     }
 
