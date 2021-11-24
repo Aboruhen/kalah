@@ -2,4 +2,6 @@ server:
   port: 8080
 kalah-metrics:
   ribbon:
-    listOfServers: http://localhost:8080
+    list-of-servers:
+      - http://localhost:8080
+      - http://localhost:8081
