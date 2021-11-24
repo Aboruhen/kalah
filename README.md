@@ -8,10 +8,10 @@ Normally a good practise would be to first crate the api documentation.
 For example using an [OpenAPI](https://www.openapis.org/)
 
 #### Create new game
-![Sequence diagram](uml/init-games.png)
+![Sequence diagram](kalag-game/uml/init-games.png)
 
 #### Make a move
-![Sequence diagram](uml/player-move.png)
+![Sequence diagram](kalag-game/uml/player-move.png)
 
 ### Play the game
 There were no UI requirements.

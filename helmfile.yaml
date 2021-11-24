@@ -1,3 +1,5 @@
 releases:
-  - name: kalah
-    chart: ./kalah
+  - name: kalah-game
+    chart: ./kalah-game-chart
+  - name: kalah-metrics
+    chart: ./kalah-metrics-chart
