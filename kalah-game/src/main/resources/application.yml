@@ -1,7 +1,2 @@
 server:
-  port: 8080
-kalah-metrics:
-  ribbon:
-    list-of-servers:
-      - http://localhost:8080
-      - http://localhost:8081
+  port: 8082
