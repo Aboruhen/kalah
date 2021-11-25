@@ -13,8 +13,8 @@ public class MetricController {
 
     @GetMapping("metric")
     public String testMetric() {
-        double metric = random.nextDouble();
-        log.info("Get metric: {} from {}", metric, this.getClass());
+        double metric = random.nextDouble() + 100;
+        log.info("New Get metric: {} from {}", metric, this.getClass());
         return String.valueOf(metric);
     }
 
