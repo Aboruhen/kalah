@@ -3,3 +3,14 @@ kalah-metrics:
     list-of-servers:
       - http://localhost:8080
       - http://localhost:8081
+#
+#spring:
+#  cloud:
+#    discovery:
+#      client:
+#        simple:
+#          instances:
+#            kalah-metrics:
+#              - serviceId: kalah-metrics
+#                host: localhost
+#                port: 8080

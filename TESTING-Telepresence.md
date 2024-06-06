@@ -2,6 +2,7 @@
     * The assumpsion is that kubernetes is pre defined, spined up somewhere.
     * you should have an access to it.
     * You should have a permissions to push new images which will be used by kubernetes
+
 ##
  1. run `mvn clean package` - it will generate docker images
  2. run `mvn dockerfile:push` - to push new images into your local registry

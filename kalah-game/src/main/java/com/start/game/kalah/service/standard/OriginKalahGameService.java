@@ -2,7 +2,6 @@ package com.start.game.kalah.service.standard;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
-
 import com.start.game.kalah.api.KalahApi;
 import com.start.game.kalah.api.model.GameInit;
 import com.start.game.kalah.api.model.GameStatus;

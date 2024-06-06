@@ -35,7 +35,7 @@ My preference would be a BOAT plugin as it's really simple a cover mostly all ne
 ## Install & Running
 
 ### Prerequisites
-* [Java 17](http://www.oracle.com/technetwork/java/javase/downloads/index.html)  - Programming language
+* [Java 21](http://www.oracle.com/technetwork/java/javase/downloads/index.html)  - Programming language
 * [Maven 3.5.0](https://maven.apache.org/download.cgi) - Build tool
 
 ### Pull from git
@@ -49,8 +49,7 @@ $ cd kalah
 * How to manage different java versions 
 ```
 $ sdk list java
-$ sdk install java 17.0.1-oracle
-$ sdk use java  17.0.1-oracle
+
 ```
 
 * Run test
@@ -67,3 +66,11 @@ $ mvn spring-boot:run
 * [Spring boot 2.5.6](https://projects.spring.io/spring-boot/) -Backed Framework
 * [Maven](https://maven.apache.org/) - Dependency Management
 
+
+
+`docker build -t kalah-game:latest --build-arg JAR_FILE=kalah-game.jar ./kalah-game`
+`docker build -t kalah-metrics:latest --build-arg JAR_FILE=kalah-metrics.jar ./kalah-metrics`
+`docker tag kalah-game localhost:5000/kalah-game`
+`docker tag kalah-metrics localhost:5000/kalah-metrics`
+`docker push localhost:5000/kalah-game:latest`
+`docker push localhost:5000/kalah-metrics:latest`

@@ -1,5 +1,7 @@
 releases:
   - name: kalah-game
+#    namespace: kalah
     chart: ./kalah-game-chart
   - name: kalah-metrics
+#    namespace: kalah
     chart: ./kalah-metrics-chart
