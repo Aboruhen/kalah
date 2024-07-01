@@ -1,0 +1,14 @@
+{
+    "target": {
+        "path": "pod/kalah-metrics-7dc76bcc9f-pfm9q"
+    },
+
+    "feature": {
+        "fs": "write",
+        "network": {
+            "incoming": {
+                "mode": "steal"
+            }
+        }
+    }
+}

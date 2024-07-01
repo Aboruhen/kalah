@@ -1,0 +1,13 @@
+{
+    "target": {
+        "path": "pod/kalah-game-5745669d8-klsh8"
+    },
+    "feature": {
+        "fs": "write",
+        "network": {
+            "incoming": {
+                "mode": "steal"
+            }
+        }
+    }
+}
