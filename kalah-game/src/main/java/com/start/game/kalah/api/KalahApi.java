@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +25,7 @@ public class KalahApi {
 
     /**
      * Create new game.
+     *
      * @return new game URL
      */
     @PostMapping(value = "/games")
@@ -35,11 +37,20 @@ public class KalahApi {
 
     /**
      * Player move.
+     *
      * @return current game status
      */
     @PutMapping("/games/{gameId}/pits/{pitId}")
     public ResponseEntity<GameStatus> play(@PathVariable String gameId, @PathVariable Integer pitId) {
         log.debug("Next Move from pit {}, in game: {}", pitId, gameId);
+
+        return ResponseEntity.ok().body(gameMove(gameId, pitId));
+    }
+
+    @PutMapping("/games/{gameId}/pits/{pitId}/mock")
+    public ResponseEntity<GameStatus> playMock(@PathVariable String gameId, @PathVariable Integer pitId,
+        @RequestBody RequestMock requestMock) {
+        log.debug("Request Mock: {}", requestMock);
 
         return ResponseEntity.ok().body(gameMove(gameId, pitId));
     }

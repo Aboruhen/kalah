@@ -117,8 +117,8 @@ public class OriginKalahGameService implements KalahGameService {
 
     private void logMetric(String logPlace) {
         log.info("Start metric in '{}'", logPlace);
-        String metric = metricClient.metric();
-        log.info("Loaded metric: {} in '{}'", metric, logPlace);
+//        String metric = metricClient.metric();
+//        log.info("Loaded metric: {} in '{}'", metric, logPlace);
     }
 
 }
